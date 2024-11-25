@@ -100,9 +100,6 @@ test('Search Product', async ({ page }) => {
 
         // Refined selector for product name inside `.productinfo`
         const productName = await product.locator('.productinfo > p').innerText();
-        const productPrice = await product.locator('.productinfo > h2').innerText();
-
-        //console.log(`Product ${i + 1}: Name = "${productName}", Price = "${productPrice}"`);
 
         // Assert product name contains the search term (case-insensitive)
         expect(productName.toLowerCase()).toContain(searchTerm.toLowerCase());
